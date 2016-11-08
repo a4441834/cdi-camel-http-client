@@ -6,7 +6,7 @@ endpoints and beans.
 This quickstart is the client side which embeds a Camel route that triggers every 5th second,
 and calls a remote HTTP service and logs the response.
 
-The server side provides the remote HTTP service is the `quickstart-cdi-camel-jetty` quicstart which must be up and running.
+The server side provides the remote HTTP service is the `cdi-camel-jetty` quickstart which must be up and running.
 
 
 ### Building
@@ -43,24 +43,6 @@ Then find the name of the pod that runs this quickstart, and output the logs fro
 
 You can also use the fabric8 [web console](http://fabric8.io/guide/console.html) to manage the
 running pods, and view logs and much more.
-    
-## Calling the remote service from a shell script
-
-You can also call the remote HTTP service from a shell script. We have provided a script named `src/test/resources/hitme-f8.sh` (no script for windows)
-in the source code for the quickstart, not in the docker image, which will call the service once per second.
-
-You may need to add execution permission to the script before you can execute it
-
-    chmod +x src/test/resources/hitme-f8.sh
-
-And then run the script
-
-    src/test/resources/hitme-f8.sh
-
-While the script runs, you can try to scale up or down the number of pods on the remote HTTP service using either the fabric8 web console,
-or from the command line using the openshift client
-
-    oc scale --replicas=3 rc cdi-camel-jetty
 
 
 ### More details
