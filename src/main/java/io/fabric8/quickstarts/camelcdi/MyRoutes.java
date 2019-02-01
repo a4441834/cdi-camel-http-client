@@ -31,7 +31,8 @@ public class MyRoutes extends RouteBuilder {
     @Inject @Uri("timer:foo?period=5000")
     private Endpoint inputEndpoint;
 
-    @Inject @Uri("netty4-http:http://{{service:cdi-camel-jetty:localhost:8080}}/camel/hello?keepAlive=false&disconnect=true")
+   // @Inject @Uri("netty4-http:http://{{service:cdi-camel-jetty:localhost:8080}}/camel/hello?keepAlive=false&disconnect=true")
+    @Inject @Uri("http://data-service-myproject.192.168.99.103.nip.io/identity/profile?keepAlive=false&disconnect=true")
     private Endpoint httpEndpoint;
 
     @Inject @Uri("log:output?showExchangePattern=false&showBodyType=false&showStreams=true")
